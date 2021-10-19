@@ -5,18 +5,18 @@ const RegisterNewTransaction = ({setList,list}) => {
 
     const [title,setTitle] = useState('')
     const [value,setValue] = useState('')
-    const [type,setType] = useState('')
+ 
 
     const Register = () => {
-        if(type === 'Saída' || type === 'saída' || type === 'saida'){
+
+        if(value > 0){
             setList([...list, { 
                 title: title, 
                 type: "Saída", 
                 value: Number(value) *-1
             }])
         }
-
-       
+        
     }
 
     return(
@@ -24,15 +24,10 @@ const RegisterNewTransaction = ({setList,list}) => {
             <input 
                 value={title}
                 type='text' 
-                // placeholder='Título' 
+                placeholder='Título' 
                 onChange={(e) => setTitle(e.target.value)}
             />
-            <input 
-                value={type} 
-                type='text' 
-                placeholder='Tipo' 
-                onChange={(e) => setType(e.target.value)}
-            />
+           
             <input 
                 value={value}
                 type='text' 

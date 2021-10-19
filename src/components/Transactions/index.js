@@ -5,7 +5,7 @@ const  Transactions = ({list}) => {
         <div>
             {
                 list.map((elt) =>
-                    <div>
+                    <div className='item'>
                         <h3>Nome: {elt.title}</h3>
                         <h3>Tipo: {elt.type}</h3>
                         <h3>Valor: {elt.value}</h3>
